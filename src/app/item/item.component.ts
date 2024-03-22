@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { Item } from "../item";
+import { Item } from "../todo-list/item";
 
 
 @Component({
