@@ -1,12 +1,14 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { ItemComponent } from "./item/item.component";
+import { Item } from "./item";
 
 @Component({
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [CommonModule],
+  imports: [CommonModule, ItemComponent],
 })
 export class AppComponent {
   componentTitle = "My To Do List";
@@ -31,11 +33,16 @@ export class AppComponent {
 
   addItem(description: string) {
     if (!description) return;
-  
+
     this.allItems.unshift({
       description,
       done: false
     });
   }
-  
+
+  remove(item: Item) {
+    this.allItems.splice(this.allItems.indexOf(item), 1);
+  }
+
+
 }
