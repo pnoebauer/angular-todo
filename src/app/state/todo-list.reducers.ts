@@ -16,7 +16,7 @@ const initialState: TodoState = [
   { description: 'laugh', done: false },
 ];
 
-export function reducer(state = initialState, action: TodoActions) {
+export function todosReducer(state = initialState, action: TodoActions) {
   switch (action.type) {
     case TodoListActions.Add:
       return [{ description: action.payload, done: false }, ...state];
