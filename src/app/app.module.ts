@@ -3,21 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
-import { StoreModule } from "@ngrx/store";
-import { todosReducer } from "./state/todo-list.reducers";
+import { StoreModule } from '@ngrx/store';
+import { todosReducer } from './state/todo-list.reducers';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     CommonModule,
     TodoListComponent,
     StoreModule.forRoot({}),
-    [StoreModule.forFeature('todoList', todosReducer)]
+    [StoreModule.forFeature('todoList', todosReducer)],
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

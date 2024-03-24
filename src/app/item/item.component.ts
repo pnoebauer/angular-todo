@@ -1,7 +1,6 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { Item } from "../todo-list/item";
-
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Item } from '../todo-list/item';
 
 @Component({
   selector: 'app-item',
@@ -11,7 +10,6 @@ import { Item } from "../todo-list/item";
   styleUrl: './item.component.css',
 })
 export class ItemComponent {
-
   editable = false;
 
   @Input() item!: Item;

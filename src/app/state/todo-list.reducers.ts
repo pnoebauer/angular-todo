@@ -1,13 +1,12 @@
 import { Item } from '../todo-list/item';
 import { TodoActions, TodoListActions } from './todo-list.actions';
 
-
 export interface TodoItem {
-  description: string,
-  done: boolean
+  description: string;
+  done: boolean;
 }
 
-export type TodoState = TodoItem[]
+export type TodoState = TodoItem[];
 
 const initialState: TodoState = [
   { description: 'eat', done: true },
@@ -16,7 +15,10 @@ const initialState: TodoState = [
   { description: 'laugh', done: false },
 ];
 
-export function todosReducer(state = initialState, action: TodoActions) {
+export function todosReducer(
+  state = initialState,
+  action: TodoActions
+): TodoState {
   switch (action.type) {
     case TodoListActions.Add:
       return [{ description: action.payload, done: false }, ...state];
@@ -26,5 +28,7 @@ export function todosReducer(state = initialState, action: TodoActions) {
       return state.flatMap((value, index) =>
         index === indexToRemove ? [] : [value]
       );
+    default:
+      return [...state];
   }
 }
