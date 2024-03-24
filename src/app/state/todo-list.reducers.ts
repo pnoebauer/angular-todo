@@ -1,7 +1,15 @@
 import { Item } from '../todo-list/item';
 import { TodoActions, TodoListActions } from './todo-list.actions';
 
-const initialState = [
+
+export interface TodoItem {
+  description: string,
+  done: boolean
+}
+
+export type TodoState = TodoItem[]
+
+const initialState: TodoState = [
   { description: 'eat', done: true },
   { description: 'sleep', done: false },
   { description: 'play', done: false },
